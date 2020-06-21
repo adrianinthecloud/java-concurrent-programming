@@ -15,6 +15,7 @@ public class CompletableFutureTravelBooking {
         System.out.printf("Flight Number: %s\n", flightOrder);
         System.out.printf("Hotel: %s\n", hotelOrder);
         System.out.printf("Car: %s\n", carOder);
+
     }
     
     public static void main(String args[]) {
