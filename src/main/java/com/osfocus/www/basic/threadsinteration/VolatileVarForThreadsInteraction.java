@@ -1,4 +1,4 @@
-package com.osfocus.www.basic.threads_interation;
+package com.osfocus.www.basic.threadsinteration;
 
 /**
  * Author: Adrian LIU

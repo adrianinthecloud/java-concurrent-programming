@@ -1,37 +1,33 @@
-package com.osfocus.www.basic.threads_interation;
+package com.osfocus.www.basic.threadsinteration;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.LockSupport;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Author: Adrian LIU
  * Date: 2020-06-14
  * Problem statement:
  * using two threads to interactively print out A1B2C3D4E5F6G7
- * implementation: solve the problem using LockSupport
+ * implementation: solve the problem using AtomicBoolean which internally using compareAndSet to set value
  */
-public class LockSupportForThreadsInteraction {
+public class CASForThreadsInteraction {
+    private static AtomicBoolean flag = new AtomicBoolean(true);
     static Thread t1, t2 = null;
 
     public static void main(String args[]) {
-
-
         t1 = new Thread(() -> {
             Character baseLetter = 'A';
             for (int i = 0; i < 7; i++) {
+                while (!flag.get()) { }
                 System.out.print((char) (baseLetter+i));
-
-                LockSupport.unpark(t2);
-                LockSupport.park();
+                flag.set(false);
             }
         });
 
         t2 = new Thread(() -> {
             for (int i = 1; i <= 7; i++) {
-                LockSupport.park();
+                while (flag.get()) { }
                 System.out.print(i);
-
-                LockSupport.unpark(t1);
+                flag.set(true);
             }
         });
 

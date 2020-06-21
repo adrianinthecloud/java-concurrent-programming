@@ -1,4 +1,4 @@
-package com.osfocus.www.basic.threads_interation;
+package com.osfocus.www.basic.threadsinteration;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

@@ -1,4 +1,4 @@
-package com.osfocus.www.completable_future;
+package com.osfocus.www.completablefuture;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;

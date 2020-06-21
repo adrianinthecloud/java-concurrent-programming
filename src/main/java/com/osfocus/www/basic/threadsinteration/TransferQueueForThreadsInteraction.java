@@ -1,4 +1,4 @@
-package com.osfocus.www.basic.threads_interation;
+package com.osfocus.www.basic.threadsinteration;
 
 import java.util.concurrent.LinkedTransferQueue;
 import java.util.concurrent.TransferQueue;
