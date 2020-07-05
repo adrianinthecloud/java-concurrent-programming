@@ -5,6 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 // IllegalMonitorStateException is thrown when a thread is not the owner of a monitor and trying to notify() and notifyAll()
 // or a thread tryRelease a lock when it is not exclusive owner thread.
+// It will also be thrown when a condition try to notify which is supposed to be signal.
 public class IllegalMonitorStateTest {
     static Object obj = new Object();
 
