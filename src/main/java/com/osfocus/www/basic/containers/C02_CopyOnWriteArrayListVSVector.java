@@ -22,7 +22,6 @@ public class C02_CopyOnWriteArrayListVSVector {
         });
         long end = System.currentTimeMillis();
         System.out.println("It took " + (end - start) + "ms");
-
     }
 
     public static void main(String[] args) {
