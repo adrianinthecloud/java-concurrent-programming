@@ -3,17 +3,26 @@ package com.osfocus.www.common;
 import java.util.Arrays;
 
 public class ThreadsCommonUsage {
-    static void runAndComputeTime(Thread[] ths) {
+    public static void runAndComputeTime(Thread[] ths, String ...args) {
         long start = System.currentTimeMillis();
-        Arrays.asList(ths).forEach(t->t.start());
-        Arrays.asList(ths).forEach(t->{
+        for (int i = 0; i < ths.length; i++) {
+            ths[i].start();
+        }
+
+        for (int i = 0; i < ths.length; i++) {
             try {
-                t.join();
+                ths[i].join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        });
+        }
         long end = System.currentTimeMillis();
-        System.out.println("It took " + (end - start) + "ms");
+        if (args.length > 0) {
+            System.out.println(args[0] + " took " + (end - start) + "ms");
+        } else {
+            System.out.println("It took " + (end - start) + "ms");
+        }
     }
+
+
 }
