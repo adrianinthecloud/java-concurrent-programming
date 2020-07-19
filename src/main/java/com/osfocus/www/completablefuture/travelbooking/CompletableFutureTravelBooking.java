@@ -1,4 +1,4 @@
-package com.osfocus.www.completablefuture;
+package com.osfocus.www.completablefuture.travelbooking;
 
 import java.util.concurrent.*;
 
